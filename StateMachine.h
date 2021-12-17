@@ -114,11 +114,11 @@ public:
 	 * @param DeltaTime Is the time elapsed between frames
 	 * @return State machine status to indicate any failures
 	 */
-	EStateMachineStatus Tick(float DeltaTime) {
+	EStateMachineStatus Tick(float deltaTime) {
 		if(Owner) {
 			CallbackOnUpdate callback = StatesTick[CurrentState];
 			if(callback) {
-				(Owner->*callback)(DeltaTime);
+				(Owner->*callback)(deltaTime);
 
 				return EStateMachineStatus::TickSuccess;
 			}
