@@ -16,15 +16,20 @@ enum EStateMachineStatus {
 
 /**
  * An implementation of a state machine that allows for the triggering of function delegates on state change
+ * 
+ * To use, create a TStateMachine object in the class that you want to track.
+ * In the constructor you then need to register each state to the callback functions which should all be void.
+ * After this, calling the state change will trigger each of the specified callbacks.
+ * 
  * @tparam EnumClass The user defined enum/index for a unique state
  * @tparam TemplateClass The class that owns the state machine
  */
 template<class EnumClass, class TemplateClass>
 class TStateMachine {
 public:
-	typedef void (TemplateClass::*CallbackOnEnter)();
-	typedef void (TemplateClass::*CallbackOnUpdate)(float);
-	typedef void (TemplateClass::*CallbackOnExit)();
+	typedef void (TemplateClass::* CallbackOnEnter)();
+	typedef void (TemplateClass::* CallbackOnUpdate)(float);
+	typedef void (TemplateClass::* CallbackOnExit)();
 
 private:
 	TemplateClass* Owner;
