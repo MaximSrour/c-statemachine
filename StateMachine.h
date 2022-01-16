@@ -1,3 +1,14 @@
+/**
+ * This is a C++ State Machine that has been authored by Maxim Srour for general use.
+ * 
+ * It has been written to conform to Epic Games standards for Unreal Engine development
+ * as outlined in their coding standards document.
+ * 
+ * If you wish to use this code, leave this copyright notice untouched.
+ * 
+ * Maxim Srour - 2022
+ */
+
 #pragma once
 
 #include <map>
